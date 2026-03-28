@@ -68,15 +68,23 @@
       display: flex; flex-direction: column; justify-content: center;
       padding: 5rem 4rem 5rem 6vw; overflow: hidden;
     }
+    .hero-left-bg {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 30%;
+      display: block; z-index: 0;
+      filter: brightness(0.28);
+    }
     .hero-left::before {
-      content: ''; position: absolute; inset: 0;
+      content: ''; position: absolute; inset: 0; z-index: 1;
       background-image: radial-gradient(rgba(200,150,12,0.06) 1px, transparent 1px);
       background-size: 24px 24px; pointer-events: none;
     }
     .hero-left::after {
-      content: ''; position: absolute; right: 0; top: 10%; bottom: 10%;
+      content: ''; position: absolute; right: 0; top: 10%; bottom: 10%; z-index: 1;
       width: 1px; background: linear-gradient(to bottom, transparent, var(--gold), transparent);
     }
+    .hero-left-inner { position: relative; z-index: 2; }
     .hero-right {
       background: var(--cream);
       display: flex; flex-direction: column; justify-content: center;
@@ -307,6 +315,19 @@
     .hero-left { animation: fadeUp 0.8s ease both; }
     .hero-right { animation: fadeUp 0.8s 0.15s ease both; }
 
+    /* ── LANDMARK SVG ── */
+    .hero-landmark {
+      position: absolute;
+      bottom: 0;
+      right: 1.5rem;
+      width: 150px;
+      opacity: 0.13;
+      color: var(--gold);
+      pointer-events: none;
+      z-index: 0;
+      display: block;
+    }
+
     @media (max-width: 768px) {
       .hero, .about { grid-template-columns: 1fr; }
       .hero-left { padding: 4rem 1.5rem 3rem; }
@@ -328,16 +349,19 @@
 
   <section class="hero">
     <div class="hero-left">
-      <div class="hero-tag">Long-Distance Coach Service</div>
-      <h1>Travel Across<br /><em>Pakistan</em><br />with Bala Gujjar</h1>
-      <p class="hero-sub">Your Trusted Travel Partner</p>
-      <p class="hero-desc">Comfortable, reliable, and on-time coach travel connecting cities across Pakistan. Book your seat online or reach us directly.</p>
-      <div class="hero-actions">
-        <a class="btn-gold" href="https://ticketpakistan.com/" target="_blank" rel="noopener">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M10 14L21 3M21 15v6a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h6"/></svg>
-          Book Tickets
-        </a>
-        <a class="btn-ghost" href="#contact">Contact Us</a>
+      <img class="hero-left-bg" src="minar_pakistan.jpg" alt="Minar-e-Pakistan, Lahore" />
+      <div class="hero-left-inner">
+        <div class="hero-tag">Long-Distance Coach Service</div>
+        <h1>Travel Across<br /><em>Pakistan</em><br />with Bala Gujjar</h1>
+        <p class="hero-sub">Your Trusted Travel Partner</p>
+        <p class="hero-desc">Comfortable, reliable, and on-time coach travel connecting cities across Pakistan. Book your seat online or reach us directly.</p>
+        <div class="hero-actions">
+          <a class="btn-gold" href="https://ticketpakistan.com/" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M10 14L21 3M21 15v6a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h6"/></svg>
+            Book Tickets
+          </a>
+          <a class="btn-ghost" href="#contact">Contact Us</a>
+        </div>
       </div>
     </div>
     <div class="hero-right">
