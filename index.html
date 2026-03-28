@@ -19,20 +19,27 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "BusOrCoach",
     "name": "Bala Gujjar",
     "url": "https://balagujjar.com",
     "telephone": "+92-313-333-4227",
     "email": "contact@ticketpakistan.com",
-    "sameAs": ["https://ticketpakistan.com"],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+92-313-333-4227",
-      "contactType": "customer service",
-      "availableLanguage": ["English", "Urdu"]
-    }
+    "provider": {
+      "@type": "Organization",
+      "name": "TicketPakistan",
+      "url": "https://ticketpakistan.com"
+    },
+    "potentialAction": {
+      "@type": "ReserveAction",
+      "target": "https://ticketpakistan.com/",
+      "name": "Book Bala Gujjar Tickets at TicketPakistan.com"
+    },
+    "areaServed": "Pakistan",
+    "availableLanguage": ["English", "Urdu"]
   }
   </script>
+  <link rel="icon" href="https://ticketpakistan.com/favicon.ico" type="image/x-icon" />
+  <link rel="preload" as="image" href="minar_pakistan.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -371,7 +378,7 @@
 <body>
 
   <nav>
-    <a class="nav-brand" href="#">Bala <em>Gujjar</em></a>
+    <a class="nav-brand" href="https://balagujjar.com/">Bala <em>Gujjar</em></a>
     <a class="nav-book" href="https://ticketpakistan.com/" target="_blank" rel="noopener">Book Now</a>
   </nav>
 
