@@ -223,12 +223,14 @@
     .btn-maroon:hover { background: var(--maroon-mid); transform: translateY(-1px); }
     .btn-wa-light {
       display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-      width: 100%; background: transparent; color: var(--text-mid);
+      width: 100%; background: #25d366; color: #ffffff;
       font-weight: 600; font-size: 0.9rem; padding: 0.8rem;
-      border: 1px solid var(--cream-mid); border-radius: 4px;
-      text-decoration: none; transition: border-color 0.2s, color 0.2s;
+      border: 1px solid #25d366; border-radius: 4px;
+      text-decoration: none; transition: background 0.2s, border-color 0.2s;
     }
-    .btn-wa-light:hover { border-color: #25d366; color: #25d366; }
+    .btn-wa-light:hover {
+      background: #1ebe5d; border-color: #1ebe5d;
+    }
     .box-divider {
       display: flex; align-items: center; gap: 0.8rem;
       color: var(--text-muted); font-size: 0.75rem;
