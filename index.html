@@ -103,34 +103,35 @@
     .hero {
       min-height: 100vh; padding-top: 68px;
       display: grid; grid-template-columns: 1.1fr 0.9fr;
+      position: relative; overflow: hidden;
     }
-    .hero-left {
-      background: var(--maroon-dark);
-      position: relative;
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 5rem 4rem 5rem 6vw; overflow: hidden;
-    }
-    .hero-left-bg {
+    .hero-bg {
       position: absolute; inset: 0;
       width: 100%; height: 100%;
-      object-fit: cover; object-position: center 30%;
+      object-fit: cover; object-position: center 35%;
       display: block; z-index: 0;
-      filter: brightness(0.28);
+      filter: brightness(0.45);
     }
-    .hero-left::before {
+    .hero::before {
       content: ''; position: absolute; inset: 0; z-index: 1;
-      background-image: radial-gradient(rgba(200,150,12,0.06) 1px, transparent 1px);
+      background: linear-gradient(105deg, rgba(61,15,15,0.82) 0%, rgba(61,15,15,0.5) 55%, rgba(61,15,15,0.25) 100%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute; inset: 0; z-index: 1;
+      background-image: radial-gradient(rgba(200,150,12,0.05) 1px, transparent 1px);
       background-size: 24px 24px; pointer-events: none;
     }
-    .hero-left::after {
-      content: ''; position: absolute; right: 0; top: 10%; bottom: 10%; z-index: 1;
-      width: 1px; background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    .hero-left {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem 4rem 5rem 6vw;
     }
-    .hero-left-inner { position: relative; z-index: 2; }
+    .hero-left-inner { position: relative; }
     .hero-right {
-      background: var(--cream);
       display: flex; flex-direction: column; justify-content: center;
       padding: 5rem 5vw 5rem 4rem;
+      position: relative; z-index: 2;
     }
     .hero-tag {
       display: inline-flex; align-items: center; gap: 0.6rem;
@@ -182,10 +183,12 @@
 
     /* Booking box */
     .booking-box {
-      background: var(--warm-white);
-      border: 1px solid var(--cream-mid);
+      background: rgba(253,246,237,0.08);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(200,150,12,0.3);
       border-radius: 8px; padding: 2.5rem;
-      box-shadow: 0 8px 40px rgba(92,26,26,0.1);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.4);
       position: relative;
     }
     .booking-box::before {
@@ -196,15 +199,15 @@
     .booking-box-label {
       font-size: 0.68rem; font-weight: 700;
       letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--text-muted); margin-bottom: 0.6rem;
+      color: var(--gold); margin-bottom: 0.6rem;
     }
     .booking-box h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1.7rem; font-weight: 700;
-      color: var(--maroon-dark); margin-bottom: 0.5rem;
+      color: var(--cream); margin-bottom: 0.5rem;
     }
     .booking-box p {
-      font-size: 0.88rem; color: var(--text-mid);
+      font-size: 0.88rem; color: rgba(253,246,237,0.7);
       line-height: 1.65; margin-bottom: 1.5rem;
     }
     .btn-maroon {
@@ -390,8 +393,8 @@
   </nav>
 
   <section class="hero">
+    <img class="hero-bg" src="minar_pakistan.jpg" alt="Minar-e-Pakistan, Lahore" />
     <div class="hero-left">
-      <img class="hero-left-bg" src="minar_pakistan.jpg" alt="Minar-e-Pakistan, Lahore" />
       <div class="hero-left-inner">
         <div class="hero-tag">Long-Distance Coach Service</div>
         <h1>Travel Across<br /><em>Pakistan</em><br />with Bala Gujjar</h1>
